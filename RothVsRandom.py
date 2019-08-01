@@ -8,8 +8,8 @@ import ForRandomAgent
 
 experiments = iterations = 0
 experiments = 5
-iterations = 100
-threshold = 0.8
+iterations = 1000
+threshold = 0.5
 cnt = 0
 
 accuracy = np.zeros(10)
@@ -17,19 +17,19 @@ accuracy = np.zeros(10)
 for exp in range(experiments):
 
     user = RothAndErevClass.RothAndErevClass(10, 10, 0, 0, 0.0001, False)
-    dbms = RothAndErevClass.RothAndErevClass(10, 10, 0, 0, 0.0001, False)
+    dbms = ForRandomAgent.ForRandomAgent(10, 10, False)
 
     for intents in range(10):
         for itr in range(iterations):
 
             q = user.make_choice_wofails(intents, threshold)
-            e = dbms.make_choice_wofails(q, threshold)
+            e = dbms.make_choice()
             #print("q = %d e = %d\n" %(q, e))
 
             #Add payoff 10 to the best intent-query pair matching
             if intents == q and intents == e:
                 user.update_qtable(intents, e, 10)
-                dbms.update_qtable(q, e, 10)
+                dbms.update_table(q, e, 10)
 
             # #Give Payoff 2 to the Adjacent Strategies
             # elif abs(intents - e) == 1:
@@ -38,17 +38,19 @@ for exp in range(experiments):
 
             else:
                 user.remove_strategy(q)
-                dbms.remove_strategy(e)
+                #dbms.remove_strategy(e)
 
         q = user.testing(intents)
-        e = dbms.testing(q)
+        e = dbms.make_choice()
         if intents == e and intents == q:
             accuracy[intents] += 1
+
     print(np.sum(accuracy) / 10)
     accuracy.fill(0)
 
-# print(accuracy)
-# print(np.sum(accuracy) / 50)
+
+#print(accuracy)
+#print(np.sum(accuracy) / 50)
 
 
 

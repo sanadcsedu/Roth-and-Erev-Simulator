@@ -19,12 +19,29 @@ class RothAndErevClass:
         for i in range(self.n):
             self.p[i, :] = self.q[i, :] / np.sum(self.q[i])
 
+        self.options = []
+        for i in range(strategies):
+            self.options.append(i)
+
     def show(self):
-        print(self.q)
-        print()
+        np.set_printoptions(precision=2, suppress=True)
+        # print(self.p)
+        print(self.options)
         print(self.p)
 
-    def choose(self, n, k, payoff):
+    def remove_strategy(self, x):
+        if 2 * len(self.options) > self.strategies and self.options.count(x) > 0:
+            self.options.remove(x)
+        return
+
+    def update_qtable(self, n, k, payoff, basic = True):
+
+        #Running the Basic Model
+        self.q[n, k] += payoff
+        self.p[n, :] = self.q[n, :] / np.sum(self.q[n])
+
+        if basic:
+            return
 
         #Applying Cutoff Parameter [Prevent low probabilistic outcomes to influence the outcome]
 
@@ -53,7 +70,32 @@ class RothAndErevClass:
             self.p[n, :] = self.q[n, :] / np.sum(self.q[n])
             self.q = self.q * (1 - self.forgetting)
 
+    def make_choice(self, n, threshold):
 
+        max_prob = np.max(self.q[n, :])
+        if max_prob < threshold:
+            max_idx = np.argwhere(self.q[n, :] == np.amax(self.q[n, :]))
+            idx_lst = max_idx.flatten().tolist()
+            return np.random.choice(idx_lst)
+        else:
+            return np.random.randint(0, self.strategies)
+
+    def make_choice_wofails(self, n, threshold):
+
+        candidates = []
+        max_prob = np.max(self.q[n, :])
+        max_idx = np.argwhere(self.q[n, :] == np.amax(self.q[n, :]))
+        idx_lst = max_idx.flatten().tolist()
+        candidates.append(np.random.choice(idx_lst))
+        if max_prob < threshold:
+            candidates.append(np.random.choice(self.options))
+
+        return np.random.choice(candidates)
+
+    def testing(self, n):
+        max_idx = np.argwhere(self.q[n, :] == np.amax(self.q[n, :]))
+        idx_lst = max_idx.flatten().tolist()
+        return np.random.choice(idx_lst)
 
 
 
