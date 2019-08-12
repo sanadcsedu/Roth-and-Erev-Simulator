@@ -1,8 +1,9 @@
 import RothAndErevClass
+import FixedStrategy
 import numpy as np
 import ForRandomAgent
 import matplotlib as plt
-
+from tqdm import tqdm
 
 def plot(x_axis, y_axis, xstep=1.0, file=None):
     plt.xticks(np.arange(min(x_axis), max(x_axis), xstep))
@@ -24,67 +25,47 @@ def plot(x_axis, y_axis, xstep=1.0, file=None):
 
 experiments = iterations = 0
 experiments = 1
-iterations = 300
+iterations = 0
 threshold = 0.8
 cnt = 0
-UserIntent = 100
-QueryPerIntent = 100
+UserIntent = 10
+QueryPerIntent = 10
 
 accuracy = np.zeros(10)
 
 pltx = []
 plty = []
-
+total = 0
 for exp in range(experiments):
 
     user = RothAndErevClass.RothAndErevClass(UserIntent, QueryPerIntent, 0, 0, 0.0001, False)
-    dbms = RothAndErevClass.RothAndErevClass(QueryPerIntent, UserIntent, 0, 0, 0.0001, False)
+    dbms = FixedStrategy.FixedStrategy(QueryPerIntent, UserIntent, 0.6)
 
     for intents in range(UserIntent):
-        for itr in range(iterations):
+        for itr in tqdm(range(iterations)):
 
-            q = user.make_choice_wofails(intents, threshold)
-            e = dbms.make_choice_wofails(q, threshold)
-            #print("q = %d e = %d\n" %(q, e))
+            q = user.make_choice(intents, threshold)
+            e = dbms.make_choice(q)
+            #print("De %d %d\n" % (q, e))
 
             #Add payoff 10 to the best intent-query pair matching
-            if intents == q and intents == e:
-                user.update_qtable(intents, e, 10)
-                dbms.update_qtable(q, e, 10)
-
-            # #Give Payoff 2 to the Adjacent Strategies
-            # elif abs(intents - e) == 1:
-            #     user.update_qtable(intents, e, 1)
-            #     dbms.update_qtable(q, e, 1)
-
-            else:
-                user.remove_strategy(q)
-                dbms.remove_strategy(e)
+            if intents == e:
+                user.update_qtable(intents, q, 10)
 
         trials = 10
         cnt = 0
         for itr in range(trials):
             q = user.testing(intents)
-            e = dbms.testing(q)
+            e = dbms.make_choice(q)
             print("%d %d\n" % (q, e))
-            if intents == e and intents == q:
+            if intents == e:
                 cnt += 1
         accu = cnt / trials
+        total += cnt
         print(accu)
 
-        # q = user.testing(intents)
-        # e = dbms.testing(q)
-        # if intents == e and intents == q:
-        #     accuracy[intents] += 1
-
-    # print()
-    # print(np.sum(accuracy) / 10)
-    # accuracy.fill(0)
-
-# print(accuracy)
-# print(np.sum(accuracy) / 50)
-
-
+    print(total)
+    print(total/intents*trials)
 
 
 

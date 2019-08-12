@@ -26,8 +26,9 @@ class RothAndErevClass:
     def show(self):
         np.set_printoptions(precision=2, suppress=True)
         # print(self.p)
-        print(self.options)
+        #print(self.options)
         print(self.p)
+        print(self.q)
 
     def remove_strategy(self, x):
         if 2 * len(self.options) > self.strategies and self.options.count(x) > 0:
@@ -72,8 +73,8 @@ class RothAndErevClass:
 
     def make_choice(self, n, threshold):
 
-        max_prob = np.max(self.q[n, :])
-        if max_prob < threshold:
+        max_prob = np.max(self.p[n, :])
+        if max_prob > threshold:
             max_idx = np.argwhere(self.q[n, :] == np.amax(self.q[n, :]))
             idx_lst = max_idx.flatten().tolist()
             return np.random.choice(idx_lst)
