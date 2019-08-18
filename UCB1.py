@@ -10,13 +10,14 @@ class UCB1:
 
     def make_choice(self, intent):
 
-        x = np.argwhere(self.count[intent] == 0)
-        if x.size == 0:
-            ucb_value = self.q[intent]
-            ucb_value = ucb_value + np.sqrt((2*np.log(self.t))/self.count[intent])
-            return np.argmax(ucb_value)
-        else:
-            return x
+        for i in range(self.arms):
+            if self.count[intent, i] == 0:
+                return i
+
+        ucb_value = self.q[intent]
+        ucb_value = ucb_value + np.sqrt((2*np.log(self.t))/self.count[intent])
+        return np.argmax(ucb_value)
+
 
     def update_qvalue(self, intent, arm, reward):
         self.t += 1

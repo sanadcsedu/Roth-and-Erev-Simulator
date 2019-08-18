@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="fde61195-c58f-4699-ac9e-40564f1bb631" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RothAndErevClass.py" beforeDir="false" afterPath="$PROJECT_DIR$/RothAndErevClass.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FixedStrategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/FixedStrategy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UCB1.py" beforeDir="false" afterPath="$PROJECT_DIR$/UCB1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_ucb.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_ucb.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,29 +55,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main_ucb">
-    <configuration name="EpsilonGreedy" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="RothAndErev" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/EpsilonGreedy.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.main_EpsilonGreedy">
     <configuration name="UCB1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="RothAndErev" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -120,7 +100,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="RothAndErev" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -133,7 +113,29 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main_EpsilonGreedy" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="RothAndErev" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_EpsilonGreedy.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -168,6 +170,9 @@
       <module name="RothAndErev" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -185,11 +190,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main_EpsilonGreedy" />
         <item itemvalue="Python.main_ucb" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.UCB1" />
         <item itemvalue="Python.main_epsilon" />
-        <item itemvalue="Python.EpsilonGreedy" />
-        <item itemvalue="Python.main2" />
       </list>
     </recent_temporary>
   </component>
@@ -218,7 +223,15 @@
       <workItem from="1565494709509" duration="9456000" />
       <workItem from="1565547716653" duration="8975000" />
       <workItem from="1565600929851" duration="599000" />
-      <workItem from="1565644562885" duration="4928000" />
+      <workItem from="1565644562885" duration="5527000" />
+      <workItem from="1565660655959" duration="2163000" />
+      <workItem from="1565710390693" duration="3360000" />
+      <workItem from="1565725650252" duration="2230000" />
+      <workItem from="1565734994616" duration="594000" />
+      <workItem from="1565831508154" duration="2543000" />
+      <workItem from="1565839606659" duration="2309000" />
+      <workItem from="1565879611121" duration="18349000" />
+      <workItem from="1566102192635" duration="618000" />
     </task>
     <servers />
   </component>

@@ -27,8 +27,8 @@ experiments = 1
 iterations = 300
 threshold = 0.8
 cnt = 0
-UserIntent = 100
-QueryPerIntent = 100
+UserIntent = 10
+QueryPerIntent = 10
 
 accuracy = np.zeros(10)
 
@@ -66,7 +66,7 @@ for exp in range(experiments):
         for itr in range(trials):
             q = user.testing(intents)
             e = dbms.testing(q)
-            print("%d %d\n" % (q, e))
+            #print("%d %d\n" % (q, e))
             if intents == e and intents == q:
                 cnt += 1
         accu = cnt / trials

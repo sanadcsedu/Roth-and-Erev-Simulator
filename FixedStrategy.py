@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class FixedStrategy:
 
     def __init__(self, n, strategies, fixed_accuracy):
@@ -37,11 +38,14 @@ class FixedStrategy:
                 posa = np.random.randint(0, self.strategies)
                 posb = np.random.randint(0, self.strategies)
                 p = np.random.randint(0, 10)
-                #print(str(posa) + " " + str(posb) + " " + str(p))
-                self.dbms_pd[i, posa] = p/10
-                self.dbms_pd[i, posb] = 1 - (p/10)
+                # print(str(posa) + " " + str(posb) + " " + str(p))
+                self.dbms_pd[i, posa] = p / 10
+                self.dbms_pd[i, posb] = 1 - (p / 10)
 
     def make_choice(self, n):
+        return np.argmax(self.dbms_pd[n])
+
+    def testing(self, n):
         return np.argmax(self.dbms_pd[n])
 
     def show(self):
