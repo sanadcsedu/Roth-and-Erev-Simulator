@@ -35,12 +35,11 @@ class RothAndErevClass:
             self.options.remove(x)
         return
 
-    def update_qtable(self, n, k, payoff, basic = True):
+    def update_qtable(self, n, k, payoff, basic):
 
         #Running the Basic Model
         self.q[n, k] += payoff
         self.p[n, :] = self.q[n, :] / np.sum(self.q[n])
-
         if basic:
             return
 
@@ -48,8 +47,8 @@ class RothAndErevClass:
 
         if(self.cutoff > 0):
 
-            self.q[n, k] += payoff
-            self.p[n, :] = self.q[n, :] / np.sum(self.q[n])
+            #self.q[n, k] += payoff
+            #self.p[n, :] = self.q[n, :] / np.sum(self.q[n])
 
             for i in range (self.strategies):
                 if self.p[n, i] < self.cutoff:
@@ -67,8 +66,8 @@ class RothAndErevClass:
 
         #Applying Gradual forgetting
         if self.forgetting > 0:
-            self.q[n, k] += payoff
-            self.p[n, :] = self.q[n, :] / np.sum(self.q[n])
+            #self.q[n, k] += payoff
+            #self.p[n, :] = self.q[n, :] / np.sum(self.q[n])
             self.q = self.q * (1 - self.forgetting)
 
     def make_choice(self, n, threshold):

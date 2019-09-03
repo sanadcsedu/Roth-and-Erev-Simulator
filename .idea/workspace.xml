@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fde61195-c58f-4699-ac9e-40564f1bb631" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FixedStrategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/FixedStrategy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RothAndErevClass.py" beforeDir="false" afterPath="$PROJECT_DIR$/RothAndErevClass.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UCB1.py" beforeDir="false" afterPath="$PROJECT_DIR$/UCB1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_ucb.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_ucb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_EpsilonGreedy.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_EpsilonGreedy.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +42,13 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings>
+        <option name="useSoftWraps" value="true" />
+      </console-settings>
+    </option>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -55,7 +61,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main_EpsilonGreedy">
+  <component name="RunManager" selected="Python.NewRothandErev">
+    <configuration name="NewRothandErev" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="RothAndErev" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NewRothandErev.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="UCB1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="RothAndErev" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -144,28 +172,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main_epsilon" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="RothAndErev" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_epsilon.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="main_ucb" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="RothAndErev" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -190,11 +196,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.NewRothandErev" />
         <item itemvalue="Python.main_EpsilonGreedy" />
         <item itemvalue="Python.main_ucb" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.UCB1" />
-        <item itemvalue="Python.main_epsilon" />
       </list>
     </recent_temporary>
   </component>
@@ -231,7 +237,14 @@
       <workItem from="1565831508154" duration="2543000" />
       <workItem from="1565839606659" duration="2309000" />
       <workItem from="1565879611121" duration="18349000" />
-      <workItem from="1566102192635" duration="618000" />
+      <workItem from="1566102192635" duration="11235000" />
+      <workItem from="1566170196715" duration="4593000" />
+      <workItem from="1566181479587" duration="602000" />
+      <workItem from="1566190780412" duration="16609000" />
+      <workItem from="1566258706783" duration="7598000" />
+      <workItem from="1566287563394" duration="14014000" />
+      <workItem from="1566327827545" duration="1660000" />
+      <workItem from="1567539345210" duration="83000" />
     </task>
     <servers />
   </component>

@@ -30,7 +30,7 @@ class main_EpsilonGreedy:
         self.UserIntent = UI
         self.QueryPerIntent = QI
         self.original_mapping = np.zeros((UI, QI))
-        self.threshold = 0.8
+        self.threshold = 0.9
 
     def create_original_mapping(self):
         candid = []
@@ -101,8 +101,8 @@ class main_EpsilonGreedy:
         for exp in range(self.experiments):
 
             user = RothAndErevClass.RothAndErevClass(self.UserIntent, self.QueryPerIntent, 0, 0, 0.0001, False)
-            dbms = EpsilonGreedy.EpsilonGreedy(self.UserIntent, self.QueryPerIntent, 0.7)
-            #print(self.original_mapping)
+            dbms = EpsilonGreedy.EpsilonGreedy(self.UserIntent, self.QueryPerIntent, 0.75)
+
             for intents in tqdm(range(self.UserIntent)):
 
                 for itr in range(self.iterations):
@@ -131,7 +131,7 @@ if __name__ == '__main__':
         ucb_tester.create_original_mapping()
 
         x.append(cnt)
-        y.append(ucb_tester.EpsilonGreedy_vs_fixed())
+        y.append(ucb_tester.RothErev_vs_EpsilonGreedy())
         print(cnt)
         cnt += 1
 
